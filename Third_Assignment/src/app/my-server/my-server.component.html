@@ -1,0 +1,33 @@
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="content"
+  >
+<p>{{content}}</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="isAdded"
+  (click)="addContent()">Add</button>
+<p>{{isAdded}}</p>
+<p *ngIf="isAdded">Added</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="false"
+  (click)="display()">
+Display Details</button>
+<p>{{isValid}}</p>
+<p *ngIf="isValid">
+  Number : {{number}}
+  <!-- <app-my-server></app-my-server> -->
+</p>
+<p *ngFor="let item of theList; let i = index"
+  [ngStyle]="{backgroundColor: i>5 ? 'blue' : 'white'}"
+  [ngClass]="{'white-text': i>5 }">
+  {{item}}
+</p>
+<!-- <p *ngIf="isValid"; else notValid>Number</p> -->
+<!-- <ng-template #notValid>
+  <p>No Text</p>
+</ng-template> -->

@@ -1,0 +1,13 @@
+<!-- input.form-control -->
+<label>User name</label>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+  (input)="checkInput($event)">
+<p>{{serverName}}</p>
+<p>isValid : {{isValid}}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="!isValid"
+  (click)="clearInput()">Reset Input</button>
